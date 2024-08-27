@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .form-container {
+            background: #0b2447;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            animation: form-animation 0.5s ease-in-out;
+        }
+        @keyframes form-animation {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .form-label {
+            color: #ffffff;
+            font-weight: 500;
+        }
+        .form-control {
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #1f2a38;
+            color: #ffffff;
+            border: 2px solid #3b8df2;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            transition: all 0.3s ease-in-out;
+        }
+        .form-control::placeholder {
+            color: #ffffff;
+        }
+        .form-control:focus {
+            border-color: #3b8df2;
+            background-color: #1f2a38;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            outline: none;
+            transform: scale(1.02);
+        }
+        .btn-primary {
+            background-color: #3b8df2;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            font-weight: 500;
+        }
+        .btn-primary:hover {
+            background-color: #0077be;
+            font-size: 17px;
+            transform: scale(1.05);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="text-white text-center mb-4">Agendar Serviço</h1>
+        <form action="/submit-form" method="post">
+            <div class="form-group">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Digite seu e-mail" required>
+            </div>
+            <div class="form-group">
+                <label for="data" class="form-label">Data</label>
+                <input type="date" id="data" name="data" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="servico" class="form-label">Serviço</label>
+                <select id="servico" name="servico" class="form-control" required>
+                    <option value="" disabled selected>Selecione um serviço</option>
+                    <option value="servico1">Serviço 1</option>
+                    <option value="servico2">Serviço 2</option>
+                    <option value="servico3">Serviço 3</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Agendar</button>
+        </form>
+    </div>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
